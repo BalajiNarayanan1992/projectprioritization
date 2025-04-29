@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react';
 // Removed: import { Button } from '@/components/ui/button';
-import { Textarea } from '@/components/ui/textarea';
-import { cn } from '@/lib/utils';
+// Removed: import { Textarea } from '@/components/ui/textarea';
+// Removed: import { cn } from '@/lib/utils';
+
+// Simple replacement for cn (classnames)
+const cn = (...classes) => classes.filter(Boolean).join(' ');
 
 // Define the structure for criteria and topics
 /**
@@ -260,7 +263,7 @@ const ProjectPrioritizationApp = () => {
                                             <option value="4">4</option>
                                             <option value="5">5</option>
                                         </select>
-                                        <Textarea
+                                        <textarea // Replaced Textarea with standard HTML textarea
                                             value={criterion.comment}
                                             onChange={(e) =>
                                                 handleCommentChange(topicIndex, criterionIndex, e.target.value)
