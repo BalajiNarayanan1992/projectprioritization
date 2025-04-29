@@ -4,19 +4,21 @@ import { Textarea } from '@/components/ui/textarea';
 import { cn } from '@/lib/utils';
 
 // Define the structure for criteria and topics
-interface Criterion {
-    label: string;
-    rating: number | null;
-    comment: string;
-}
+/**
+ * @typedef {object} Criterion
+ * @property {string} label
+ * @property {number | null} rating
+ * @property {string} comment
+ */
 
-interface Topic {
-    name: string;
-    criteria: Criterion[];
-}
+/**
+ * @typedef {object} Topic
+ * @property {string} name
+ * @property {Criterion[]} criteria
+ */
 
 // Define the topics and their criteria
-const initialTopics: Topic[] = [
+const initialTopics = [
     {
         name: 'Strategic Alignment',
         criteria: [
@@ -70,8 +72,8 @@ const initialTopics: Topic[] = [
 ];
 
 // Helper function to calculate the score
-const calculateScore = (topics: Topic[]): { totalScore: number; topicScores: { [key: string]: number } } => {
-    const topicScores: { [key: string]: number } = {};
+const calculateScore = (topics) => {
+    const topicScores = {};
     let totalScore = 0;
 
     topics.forEach((topic) => {
@@ -92,10 +94,10 @@ const calculateScore = (topics: Topic[]): { totalScore: number; topicScores: { [
 // Main App Component
 const ProjectPrioritizationApp = () => {
     // State for managing the topics and current screen
-    const [topics, setTopics] = useState<Topic[]>(initialTopics);
-    const [currentScreen, setCurrentScreen] = useState<'welcome' | 'questionnaire' | 'results'>('welcome');
+    const [topics, setTopics] = useState(initialTopics);
+    const [currentScreen, setCurrentScreen] = useState('welcome');
     const [isLocalStorageAvailable, setIsLocalStorageAvailable] = useState(true); // Assume available initially
-    const [missingFields, setMissingFields] = useState<string[]>([]);
+    const [missingFields, setMissingFields] = useState([]);
 
     // Load state from localStorage on component mount
     useEffect(() => {
@@ -119,7 +121,7 @@ const ProjectPrioritizationApp = () => {
     }, [topics, isLocalStorageAvailable]);
 
     // Handler for updating a criterion's rating
-    const handleRatingChange = (topicIndex: number, criterionIndex: number, rating: number | null) => {
+    const handleRatingChange = (topicIndex, criterionIndex, rating) => {
         setTopics((prevTopics) => {
             const newTopics = [...prevTopics];
             const newTopic = { ...newTopics[topicIndex] };
@@ -134,7 +136,7 @@ const ProjectPrioritizationApp = () => {
     };
 
     // Handler for updating a criterion's comment
-    const handleCommentChange = (topicIndex: number, criterionIndex: number, comment: string) => {
+    const handleCommentChange = (topicIndex, criterionIndex, comment) => {
         setTopics((prevTopics) => {
             const newTopics = [...prevTopics];
             const newTopic = { ...newTopics[topicIndex] };
@@ -155,7 +157,7 @@ const ProjectPrioritizationApp = () => {
         } else if (currentScreen === 'questionnaire') {
             // Basic validation: Check if all ratings are provided
             let allRated = true;
-            const missing: string[] = [];
+            const missing = [];
             for (const topic of topics) {
                 for (const criterion of topic.criteria) {
                     if (criterion.rating === null) {
