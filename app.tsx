@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Button } from '@/components/ui/button';
+// Removed: import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
 import { cn } from '@/lib/utils';
 
@@ -210,12 +210,12 @@ const ProjectPrioritizationApp = () => {
                         <p className="text-gray-600 dark:text-gray-300 mb-8">
                             Evaluate and prioritize your projects by answering a few questions.
                         </p>
-                        <Button
+                        <button // Replaced Button with standard HTML button
                             onClick={handleNext}
                             className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
                         >
                             Start Questionnaire
-                        </Button>
+                        </button>
                     </div>
                 </div>
             );
@@ -273,18 +273,18 @@ const ProjectPrioritizationApp = () => {
                             </div>
                         ))}
                         <div className="flex justify-between">
-                            <Button
+                            <button  // Replaced Button with standard HTML button
                                 onClick={handlePrevious}
                                 className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded"
                             >
                                 Previous
-                            </Button>
-                            <Button
+                            </button>
+                            <button // Replaced Button with standard HTML button
                                 onClick={handleNext}
                                 className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
                             >
                                 Submit
-                            </Button>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -310,12 +310,12 @@ const ProjectPrioritizationApp = () => {
                                 ))}
                             </ul>
                         </div>
-                        <Button
+                        <button // Replaced Button with standard HTML button
                             onClick={handleRestart}
                             className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
                         >
                             Restart
-                        </Button>
+                        </button>
                     </div>
                 </div>
             );
