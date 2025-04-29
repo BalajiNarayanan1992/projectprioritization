@@ -177,3 +177,38 @@ button.green:hover {
     border-radius: 8px;
     border: 1px solid #edf2f7;
 }
+
+.results-screen {
+    text-align: center;
+    padding: 40px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 60px auto;
+}
+
+.results-screen h1 {
+    font-size: 2.5em;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+.results-screen p {
+    font-size: 1.25em;
+    color: #48bb78;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+.results-screen ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 30px;
+    font-size: 1.1em;
+    color: #2d3748;
+}
+
+.results-screen li {
+    margin-bottom: 10px;
+}
