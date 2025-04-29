@@ -65,12 +65,12 @@ button {
     font-size: 1.1em;
     transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    margin: 5px; /* Add margin to buttons */
+    margin: 5px;
 }
 
 button.blue {
     background-color: #4299e1;
-    color: white;
+    color: #fff;
 }
 
 button.blue:hover {
@@ -90,7 +90,7 @@ button.gray:hover {
 
 button.green {
     background-color: #48bb78;
-    color: white;
+    color: #fff;
 }
 
 button.green:hover {
